@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
-import { getGenres } from "../lib/scraper/homePage"
+import { getGenres, getLatest } from "../lib/scraper/homePage"
+import { mangaCard } from '../components/mangaInterfaces'
 
 export const scraperPath = new Hono()
 
@@ -9,5 +10,12 @@ scraperPath.get('/genre', async (c) => {
     console.log("works")
   return c.json(genreList)
 })
+
+
+scraperPath.get('/latest', async (c) => {
+  const latestList: mangaCard[] = await getLatest()
+  return c.json(latestList)
+})
+
 
 export default scraperPath

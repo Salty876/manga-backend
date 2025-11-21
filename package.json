@@ -13,6 +13,7 @@
     "hono": "^4.10.6"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.33",
     "wrangler": "^4.4.0"
   }
 }

@@ -7,6 +7,6 @@ app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
-app.route('/', scraperPath)
+app.route('/scraper', scraperPath)
 
 export default app

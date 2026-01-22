@@ -1,12 +1,12 @@
-import { Hono } from 'hono'
-import { scraperPath } from "./routes/scraper"
+import { Hono } from "hono";
+import home from "./routes/homePage";
 
-const app = new Hono()
+const app = new Hono();
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+app.route("/homePage", home);
 
-app.route('/scraper', scraperPath)
+app.get("/", (c) => {
+  return c.text("Hello Hono!");
+});
 
-export default app
+export default app;
